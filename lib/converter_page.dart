@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-// 1. Create a variable that stores the converted currency value
-// 2. Create a function that multiplies the value given by the textfield
-// 3. Store the value in the variable that we created
-// 4.Display the value
-
 class ConverterPage extends StatefulWidget {
   const ConverterPage({super.key});
   @override
@@ -85,16 +80,11 @@ class _ConverterPageState extends State<ConverterPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('USD ', style: textStyle),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: Colors.brown,
-                      ),
+                      Icon(Icons.arrow_forward, color: Colors.brown),
                       Text(' BDT', style: textStyle),
                     ],
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   TextField(
                     controller: textEditingController,
                     style: TextStyle(color: Colors.black),
@@ -109,30 +99,24 @@ class _ConverterPageState extends State<ConverterPage> {
                       prefixIconColor: Colors.brown,
                       focusedBorder: border,
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(40),
-                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
                       ),
                     ),
                     keyboardType: TextInputType.numberWithOptions(
                       decimal: true,
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   TextButton(
                     onPressed: () => convert(),
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.brown,
-                        foregroundColor:
-                            const Color.fromARGB(255, 255, 255, 255),
-                        minimumSize: Size(double.infinity, 50)),
+                      backgroundColor: Colors.brown,
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      minimumSize: Size(double.infinity, 50),
+                    ),
                     child: Text("Convert"),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   Text(
                     'BDT ${result.toStringAsFixed(2)}',
                     style: TextStyle(
